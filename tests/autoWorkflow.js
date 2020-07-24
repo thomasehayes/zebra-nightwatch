@@ -20,7 +20,7 @@ module.exports = {
         browser.pause(2000)
     },
 
-    'Enter Vehicle Information': function (browser) {
+    'Enter Basic Vehicle Information': function (browser) {
         const page = browser.page.homepage();
         page
             .enterVehicleYear(2012)
@@ -29,5 +29,16 @@ module.exports = {
             .enterVehicleTrim("GLS 4dr SUV")
             .clickVehicleSaveBtn()
         browser.pause(2000)
+    },
+
+    'Enter Vehicle Usage Information': function (browser) {
+        const page = browser.page.homepage();
+        page
+            .clickOwnPaidInFullBtn()
+            .clickPersonalCommutingBtn()
+            .enterMiles(12000)
+            .clickUsageSaveBtn()
+        browser.pause(2000)
+
     }
 }

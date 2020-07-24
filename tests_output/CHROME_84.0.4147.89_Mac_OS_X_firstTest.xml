@@ -5,9 +5,9 @@
 
   <testsuite name="firstTest"
     errors="0" failures="0" hostname="" id="" package="firstTest" skipped="0"
-    tests="1" time="1.206" timestamp="">
+    tests="1" time="11.26" timestamp="">
   
-    <testcase name="Verify Zebra Navbar" classname="firstTest" time="1.206" assertions="7">
+    <testcase name="Check Navbar and URL are correct" classname="firstTest" time="11.26" assertions="7">
 
     
 

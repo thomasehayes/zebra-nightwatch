@@ -18,6 +18,18 @@ module.exports = {
             selector: 'a[class ="cta-phone cta-phone-link"]',
             locateStrategy: 'css selector'
         },
+        homeInsuranceLabel: {
+            selector: 'label[for="557ae5a0-13e0-40ca-800e-b5fef73eb05bhome"]',
+            locateStrategy: 'css selector'
+        },
+        carInsuranceLabel: {
+            selector: 'label[for="557ae5a0-13e0-40ca-800e-b5fef73eb05bauto"]',
+            locateStrategy: 'css selector'
+        },
+        zipCode: {
+            selector: 'input[id="557ae5a0-13e0-40ca-800e-b5fef73eb05b"]',
+            locateStrategy: 'css selector'
+        }
     },
     commands: [{
         verifyNavBar() {
@@ -28,7 +40,26 @@ module.exports = {
                 .assert.containsText('@navbarToolsTips', "Tools & Tips")
                 .assert.containsText('@navbarCompany', "Company")
                 .assert.containsText('@navbarPhoneNo', "1.888.255.4364")
-        }
-    }]
+            return this
+        },
 
+        clickCarInsurance() {
+             this
+                .click('@carInsuranceLabel')
+            return this
+        },
+
+        clickZipTextBox() {
+            this
+                .click('@zipCode')
+            return this
+        },
+
+        enterZipCode(zip) {
+            this
+                .setValue('@zipCode', zip)
+            return this
+        }
+
+    }]
 }

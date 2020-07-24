@@ -29,7 +29,28 @@ module.exports = {
         zipCode: {
             selector: 'input[id="557ae5a0-13e0-40ca-800e-b5fef73eb05b"]',
             locateStrategy: 'css selector'
-        }
+        },
+
+        //Needs work on making it unique to 1st start button on page
+        startBtn: {
+            selector: '.input-group-append > button',
+            locateStrategy: 'css selector'
+        },
+        noInsuranceBtn: {
+            selector: '[data-cy="currently_insuredstart-No-Radiobutton"]',
+            locateStrategy: 'css selector'
+        },
+        iRentBtn: {
+            selector: '[data-cy="residence_ownershipstart-IRent-Radiobutton"',
+            locateStrategy: 'css selector'
+        },
+        justLookingBtn: {
+            selector: '[data-cy="user_intentstart-I’MJustLookingAtMyOptions-Radiobutton"]',
+            locateStrategy: 'css selector'
+        },
+        saveAndContinueBtn: '#startSaveBtn'
+
+
     },
     commands: [{
         verifyNavBar() {
@@ -59,6 +80,36 @@ module.exports = {
             this
                 .setValue('@zipCode', zip)
             return this
+        },
+
+        clickStartBtn() {
+            this
+                .click('@startBtn')
+            return this
+        },
+
+        clickNoInsBtn() {
+            this
+                .click('@noInsuranceBtn')
+            return this
+        },
+
+        clickIRentBtn() {
+            this
+                .click('@iRentBtn')
+            return this
+        },
+
+        clickJustLookingBtn() {
+            this
+                .click('@justLookingBtn')
+            return this
+        },
+        
+        clickSaveAndContinueBtn() {
+            this
+                .click('@saveAndContinueBtn')
+            return this 
         }
 
     }]

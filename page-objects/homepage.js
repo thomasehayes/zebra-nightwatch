@@ -48,7 +48,13 @@ module.exports = {
             selector: '[data-cy="user_intentstart-I’MJustLookingAtMyOptions-Radiobutton"]',
             locateStrategy: 'css selector'
         },
-        saveAndContinueBtn: '#startSaveBtn'
+        saveAndContinueBtn: '#startSaveBtn',
+        vehicleYear: '#yearYear-0Input-0',
+        vehicleMake: '#makeMake-0Input-0',
+        vehicleModel: '#modelModel-0Input-0',
+        vehicleTrim: '#submodelSubmodel-0Input-0',
+        vehicleSaveBtn: '#vehiclesSelectSaveBtn',
+        textClick:'.question-text'
 
 
     },
@@ -110,6 +116,44 @@ module.exports = {
             this
                 .click('@saveAndContinueBtn')
             return this 
+        },
+
+        enterVehicleYear(year) {
+            this
+                .setValue('@vehicleYear', year)
+                .click('@textClick')
+                .api.pause(1000)
+            return this
+        },
+
+        enterVehicleMake(make) {
+            this
+                .setValue('@vehicleMake', make)
+                .click('@textClick')
+                .api.pause(1000)
+            return this
+        },
+
+        enterVehicleModel(model) {
+            this
+                .setValue('@vehicleModel', model)
+                .click('@textClick')
+                .api.pause(1000)
+            return this
+        },
+
+        enterVehicleTrim(trim) {
+            this
+                .setValue('@vehicleTrim', trim)
+                .click('@textClick')
+                .api.pause(1000)
+            return this
+        },
+
+        clickVehicleSaveBtn() {
+            this
+                .click('@vehicleSaveBtn')
+            return this
         }
 
     }]

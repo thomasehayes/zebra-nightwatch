@@ -9,6 +9,12 @@ module.exports = {
             .assert.urlEquals('https://www.thezebra.com/')
     },
 
+    'Verify Main Text on Homepage': function (browser) {
+        const page = browser.page.homepage();
+        page
+            .verifyHomepageTxt("Compare insurance quotes instantly.");
+    },
+
     'Verify Car and Home Insurance labels are visible': function (browser) {
         const page = browser.page.homepage();
         page

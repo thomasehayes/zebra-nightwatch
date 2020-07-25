@@ -1,6 +1,10 @@
 module.exports = {
     url: "https://www.thezebra.com/",
     elements: {
+        compareInsQuoteTxt: {
+            selector: 'h3[class="hero-subheadline"]',
+            locateStrategy: 'css selector'
+        },
         mainZebraIcon: ".header-brand",
         navbarCompare: {
             selector: '.header-nav-item:nth-child(1) > a > span',
@@ -131,6 +135,12 @@ module.exports = {
                 .assert.containsText('@navbarPhoneNo', "1.888.255.4364")
             return this
         },
+        verifyHomepageTxt(text){
+            this
+                .assert.containsText('@compareInsQuoteTxt', text)
+            return this
+        },
+
         verifyCarAndHomeLabels(){
             this  
                 .waitForElementVisible('@carInsuranceLabel')

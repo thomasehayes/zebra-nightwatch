@@ -11,8 +11,8 @@ module.exports = {
     },
 
     'Answer Questions from Start Page and Continue': function (browser) {
-        const page = browser.page.homepage();
-        page
+        const start = browser.page.start();
+        start
             .clickNoInsBtn()
             .clickIRentBtn()
             .clickJustLookingBtn()
@@ -21,8 +21,8 @@ module.exports = {
     },
 
     'Enter Basic Vehicle Information': function (browser) {
-        const page = browser.page.homepage();
-        page
+        const vehicle = browser.page.vehicle();
+        vehicle
             .enterVehicleYear(2012)
             .enterVehicleMake("Hyundai")
             .enterVehicleModel("Tucson")
@@ -32,8 +32,8 @@ module.exports = {
     },
 
     'Enter Vehicle Usage Information': function (browser) {
-        const page = browser.page.homepage();
-        page
+        const vehicle = browser.page.vehicle();
+        vehicle
             .clickOwnPaidInFullBtn()
             .clickPersonalCommutingBtn()
             .enterMiles(12000)
@@ -43,8 +43,8 @@ module.exports = {
     },
 
     "Add Driver's Information": function (browser) {
-        const page = browser.page.homepage() 
-        page
+        const driver = browser.page.drivers() 
+        driver
             .enterFName("John")
             .enterLName("Smith")
             .enterDob(111119900)

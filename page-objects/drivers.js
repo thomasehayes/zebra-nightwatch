@@ -1,5 +1,11 @@
 module.exports = {
     elements: {
+        fName: '#first_name-0',
+        lName:'#last_name-0',
+        dob: '#date_of_birth-0',
+        address: '#garaging_addressInput',
+        unit: '#unit-0',
+        driverSaveBtn: '#driversSelectSaveBtn',
         male: {
             selector: '[data-cy="gender-0-Male-Radiobutton"]',
             locatestrategy: 'css selector'
@@ -23,6 +29,43 @@ module.exports = {
         showQuotes: '[data-cy="show_my_quotes"]'
     },
     commands: [{
+        enterFName(fName) {
+            this
+                .setValue('@fName', fName)
+            return this
+        },
+        
+        enterLName(lName) {
+            this
+                .setValue('@lName', lName)
+            return this
+        },
+
+        enterDob(dob) {
+            this
+                .setValue('@dob', dob)
+                .api.pause(500)
+            return this
+        },
+
+        enterAddress(address) {
+            this
+                .setValue('@address', address)
+            return this
+        },
+
+        enterUnit(unit) {
+            this
+                .setValue('@unit', unit)
+                // .click('[data-cy="pac_item"]')
+            return this
+        },
+
+        clickDriverSaveBtn() {
+            this
+                .click('@driverSaveBtn')
+            return this
+        },
         clickMale() {
             this
                 .click('@male')

@@ -25,7 +25,11 @@ module.exports = {
         const page = browser.page.homepage();
         page
             .verifyToolsTipsTabLnks();
-    }
+    },
     
-    
+    'Verify Links exist for Company tab': function (browser) {
+        const page = browser.page.homepage();
+        page
+            .verifyCompanyTabLnks();
+    }    
 }

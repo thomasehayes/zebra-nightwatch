@@ -96,7 +96,29 @@ module.exports = {
         carInsCalculatorLnk: {
             selector: 'a[href="https://www.thezebra.com/auto-insurance/coverage/car-insurance-calculator/"]',
             locateStrategy: 'css selector'
-        },    
+        },
+
+        //Company Links   
+        aboutTheZebraLnk: {
+            selector: 'a[href="https://www.thezebra.com/about/"]',
+            locateStrategy: 'css selector'
+        },
+        pressLnk: {
+            selector: 'a[href="https://www.thezebra.com/about/press/"]',
+            locateStrategy: 'css selector'
+        },
+        careersLnk: {
+            selector: 'a[href="https://www.thezebra.com/about/careers/"]',
+            locateStrategy: 'css selector'
+        },
+        contactUsLnk: {
+            selector: 'a[href="https://www.thezebra.com/about/help/"]',
+            locateStrategy: 'css selector'
+        },        
+        covid19ResponseLnk: {
+            selector: 'a[href="https://www.thezebra.com/about/covid-19-response/"]',
+            locateStrategy: 'css selector'
+        },
     },
     commands: [{
         verifyNavBar() {
@@ -139,6 +161,17 @@ module.exports = {
                 .waitForElementVisible('@researchReportsLnk')
                 .waitForElementVisible('@stateOfInsLnk')
                 .waitForElementVisible('@carInsCalculatorLnk')
+            return this
+        },
+        
+        verifyCompanyTabLnks(){
+            this
+                .click('@navbarCompany')
+                .waitForElementVisible('@aboutTheZebraLnk')
+                .waitForElementVisible('@pressLnk')
+                .waitForElementVisible('@careersLnk')
+                .waitForElementVisible('@contactUsLnk')
+                .waitForElementVisible('@covid19ResponseLnk')
             return this
         },
 

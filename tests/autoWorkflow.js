@@ -42,7 +42,7 @@ module.exports = {
 
     },
 
-    "Enter Driver's Information": function (browser) {
+    "Add Driver's Information": function (browser) {
         const page = browser.page.homepage() 
         page
             .enterFName("John")
@@ -51,6 +51,18 @@ module.exports = {
             .enterAddress("1475 Island Ave")
             .enterUnit(2403)
             .clickDriverSaveBtn()
+        browser.pause(2000)
+    },
+
+    "Provide Driver's Information": function (browser) {
+        const driver = browser.page.drivers()
+        driver  
+            .clickMale()
+            .clickMaritalStatus()
+            .clickEducationLevel()
+            .clickNoAccident()
+            .enterEmail("johnsmith@example.com")
+            .clickShowQuotesBtn()
         browser.pause(2000)
     }
 }

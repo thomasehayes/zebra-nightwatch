@@ -35,7 +35,49 @@ module.exports = {
         startBtn: {
             selector: '.input-group-append > button',
             locateStrategy: 'css selector'
-        }
+        },
+
+        //Ins = Insurance
+        autoInsLnk: {
+            selector: 'a[href="https://www.thezebra.com/auto-insurance/"]',
+            locateStrategy: 'css selector'
+        },
+        homeInsLnk: {
+            selector: 'a[href="https://www.thezebra.com/homeowners-insurance/"]',
+            locateStrategy: 'css selector'
+        },
+        rentersInsLnk: {
+            selector: 'a[href="https://www.thezebra.com/renters-insurance/"]',
+            locateStrategy: 'css selector'
+        },
+        lifeInsLnk: {
+            selector: 'a[href="https://www.thezebra.com/life-insurance/"]',
+            locateStrategy: 'css selector'
+        },
+        freeCarInsQuoteInsLnk: {
+            selector: 'a[href="https://www.thezebra.com/car-insurance-quotes/"]',
+            locateStrategy: 'css selector'
+        },
+        bestCheapCarInsLnk: {
+            selector: 'a[href="https://www.thezebra.com/auto-insurance/how-to-shop/best-cheap-auto-insurance/"]',
+            locateStrategy: 'css selector'
+        },
+        bestCarInsByVehicleLnk: {
+            selector: 'a[href="https://www.thezebra.com/auto-insurance/vehicles/"]',
+            locateStrategy: 'css selector'
+        },
+        bestInsCompaniesLnk: {
+            selector: 'a[href="https://www.thezebra.com/insurance-companies/"]',
+            locateStrategy: 'css selector'
+        },  
+        insByStateLnk: {
+            selector: 'a[href="https://www.thezebra.com/states/"]',
+            locateStrategy: 'css selector'
+        },  
+        otherInsLnk: {
+            selector: 'a[href="https://www.thezebra.com/other-insurance/"]',
+            locateStrategy: 'css selector'
+        },              
     },
     commands: [{
         verifyNavBar() {
@@ -52,6 +94,23 @@ module.exports = {
             this  
                 .waitForElementVisible('@carInsuranceLabel')
                 .waitForElementVisible('@homeInsuranceLabel')
+            return this
+        },
+
+        verifyCompareTabLnks() {
+            this
+                .click('@navbarCompare')
+                .waitForElementVisible('@autoInsLnk')
+                .waitForElementVisible('@homeInsLnk')
+                .waitForElementVisible('@rentersInsLnk')
+                .waitForElementVisible('@lifeInsLnk')
+                .waitForElementVisible('@freeCarInsQuoteInsLnk')
+                .waitForElementVisible('@bestCheapCarInsLnk')
+                .waitForElementVisible('@bestCarInsByVehicleLnk')
+                .waitForElementVisible('@bestInsCompaniesLnk')
+                .waitForElementVisible('@insByStateLnk')
+                .waitForElementVisible('@otherInsLnk')
+            return this
         },
 
         clickCarInsurance() {

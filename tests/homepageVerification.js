@@ -13,6 +13,12 @@ module.exports = {
         const page = browser.page.homepage();
         page
             .verifyCarAndHomeLabels();
+    },
+
+    'Verify Links exist for Compare tab': function (browser) {
+        const page = browser.page.homepage();
+        page
+            .verifyCompareTabLnks();
     }
     
 }

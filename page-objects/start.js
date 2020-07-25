@@ -18,18 +18,21 @@ module.exports = {
         clickNoInsBtn() {
             this
                 .click('@noInsuranceBtn')
+                .api.pause(500)
             return this
         },
 
         clickIRentBtn() {
             this
                 .click('@iRentBtn')
+                .api.pause(500)
             return this
         },
 
         clickJustLookingBtn() {
             this
                 .click('@justLookingBtn')
+                .api.pause(500)
             return this
         },
         

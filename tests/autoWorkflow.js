@@ -40,5 +40,17 @@ module.exports = {
             .clickUsageSaveBtn()
         browser.pause(2000)
 
+    },
+
+    "Enter Driver's Information": function (browser) {
+        const page = browser.page.homepage() 
+        page
+            .enterFName("John")
+            .enterLName("Smith")
+            .enterDob(111119900)
+            .enterAddress("1475 Island Ave")
+            .enterUnit(2403)
+            .clickDriverSaveBtn()
+        browser.pause(2000)
     }
 }

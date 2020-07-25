@@ -64,7 +64,13 @@ module.exports = {
             locateStrategy: 'css selector'
         },
         estimatedMiles:'#miles-input-0',
-        usageSaveBtn: '#vehiclesDetailsSaveBtn'
+        usageSaveBtn: '#vehiclesDetailsSaveBtn',
+        fName: '#first_name-0',
+        lName:'#last_name-0',
+        dob: '#date_of_birth-0',
+        address: '#garaging_addressInput',
+        unit: '#unit-0',
+        driverSaveBtn: '#driversSelectSaveBtn'
 
 
     },
@@ -190,8 +196,45 @@ module.exports = {
             this
                 .click('@usageSaveBtn')
             return this
-        }
+        },
 
+        enterFName(fName) {
+            this
+                .setValue('@fName', fName)
+            return this
+        },
+        
+        enterLName(lName) {
+            this
+                .setValue('@lName', lName)
+            return this
+        },
+
+        enterDob(dob) {
+            this
+                .setValue('@dob', dob)
+                .api.pause(500)
+            return this
+        },
+
+        enterAddress(address) {
+            this
+                .setValue('@address', address)
+            return this
+        },
+
+        enterUnit(unit) {
+            this
+                .setValue('@unit', unit)
+                // .click('[data-cy="pac_item"]')
+            return this
+        },
+
+        clickDriverSaveBtn() {
+            this
+                .click('@driverSaveBtn')
+            return this
+        },
 
     }]
 }

@@ -1,5 +1,5 @@
 module.exports = {
-    tags: ['test1'],
+    tags: ['homeVerification'],
     'Check Navbar and URL are correct': function (browser) {
         const page = browser.page.homepage();
         page

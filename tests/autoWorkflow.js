@@ -1,4 +1,5 @@
 module.exports = {
+    tags: ['autoWorkflow'],
     'Enter Zip Code and Click Start Button': function (browser) {
         const page = browser.page.homepage();
         page

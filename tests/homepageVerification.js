@@ -1,4 +1,5 @@
 module.exports = {
+    tags: ['test1'],
     'Check Navbar and URL are correct': function (browser) {
         const page = browser.page.homepage();
         page
@@ -8,10 +9,10 @@ module.exports = {
             .assert.urlEquals('https://www.thezebra.com/')
     },
 
-    // 'Verify Car and Home Insurance is visible': function (browser) {
-    //     const page = browser.page.homepage();
-    //     page
-    //         .verifyCarAndHomeLabels();
-    // }
+    'Verify Car and Home Insurance labels are visible': function (browser) {
+        const page = browser.page.homepage();
+        page
+            .verifyCarAndHomeLabels();
+    }
     
 }

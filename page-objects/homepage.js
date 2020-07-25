@@ -18,12 +18,12 @@ module.exports = {
             selector: 'a[class ="cta-phone cta-phone-link"]',
             locateStrategy: 'css selector'
         },
-        homeInsuranceLabel: {
-            selector: 'label[for="557ae5a0-13e0-40ca-800e-b5fef73eb05bhome"]',
+        carInsuranceLabel: {
+            selector: '[for="557ae5a0-13e0-40ca-800e-b5fef73eb05bauto"]',
             locateStrategy: 'css selector'
         },
-        carInsuranceLabel: {
-            selector: 'label[for="557ae5a0-13e0-40ca-800e-b5fef73eb05bauto"]',
+        homeInsuranceLabel: {
+            selector: '[for="557ae5a0-13e0-40ca-800e-b5fef73eb05bhome"]',
             locateStrategy: 'css selector'
         },
         zipCode: {
@@ -48,6 +48,11 @@ module.exports = {
                 .assert.containsText('@navbarPhoneNo', "1.888.255.4364")
             return this
         },
+        verifyCarAndHomeLabels(){
+            this  
+                .waitForElementVisible('@carInsuranceLabel')
+                .waitForElementVisible('@homeInsuranceLabel')
+        },
 
         clickCarInsurance() {
              this
@@ -71,6 +76,6 @@ module.exports = {
             this
                 .click('@startBtn')
             return this
-        }        
+        },     
     }]
 }

@@ -37,6 +37,7 @@ module.exports = {
             locateStrategy: 'css selector'
         },
 
+        //Compare Links
         //Ins = Insurance
         autoInsLnk: {
             selector: 'a[href="https://www.thezebra.com/auto-insurance/"]',
@@ -77,7 +78,25 @@ module.exports = {
         otherInsLnk: {
             selector: 'a[href="https://www.thezebra.com/other-insurance/"]',
             locateStrategy: 'css selector'
-        },              
+        },    
+
+        //Tools & Tips Links
+        resourcesLnk: {
+            selector: 'a[href="https://www.thezebra.com/resources/"]',
+            locateStrategy: 'css selector'
+        },   
+        researchReportsLnk: {
+            selector: 'a[href="https://www.thezebra.com/resources/research/"]',
+            locateStrategy: 'css selector'
+        },            
+        stateOfInsLnk: {
+            selector: 'a[href="https://www.thezebra.com/state-of-insurance/auto/2020/"]',
+            locateStrategy: 'css selector'
+        },    
+        carInsCalculatorLnk: {
+            selector: 'a[href="https://www.thezebra.com/auto-insurance/coverage/car-insurance-calculator/"]',
+            locateStrategy: 'css selector'
+        },    
     },
     commands: [{
         verifyNavBar() {
@@ -110,6 +129,16 @@ module.exports = {
                 .waitForElementVisible('@bestInsCompaniesLnk')
                 .waitForElementVisible('@insByStateLnk')
                 .waitForElementVisible('@otherInsLnk')
+            return this
+        },
+
+        verifyToolsTipsTabLnks(){
+            this
+                .click('@navbarToolsTips')
+                .waitForElementVisible('@resourcesLnk')
+                .waitForElementVisible('@researchReportsLnk')
+                .waitForElementVisible('@stateOfInsLnk')
+                .waitForElementVisible('@carInsCalculatorLnk')
             return this
         },
 

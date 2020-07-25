@@ -19,6 +19,13 @@ module.exports = {
         const page = browser.page.homepage();
         page
             .verifyCompareTabLnks();
+    },
+
+    'Verify Links exist for Tools & Tips tab': function (browser) {
+        const page = browser.page.homepage();
+        page
+            .verifyToolsTipsTabLnks();
     }
+    
     
 }

@@ -5,6 +5,10 @@ module.exports = {
             selector: 'h3[class="hero-subheadline"]',
             locateStrategy: 'css selector'
         },
+        reviewYourQuotesTxt: {
+            selector: '[track-name="retrieve_quotes_cta"]',
+            locateStrategy: 'css selector'
+        },
         mainZebraIcon: ".header-brand",
         navbarCompare: {
             selector: '.header-nav-item:nth-child(1) > a > span',
@@ -137,10 +141,18 @@ module.exports = {
         },
         verifyHomepageTxt(text){
             this
+                .waitForElementVisible('@compareInsQuoteTxt')
                 .assert.containsText('@compareInsQuoteTxt', text)
             return this
         },
 
+        verifyReviewYourQuotesTxt(text){
+            this
+                .waitForElementVisible('@reviewYourQuotesTxt')
+                .assert.containsText('@reviewYourQuotesTxt', text)
+            return this
+        },
+        
         verifyCarAndHomeLabels(){
             this  
                 .waitForElementVisible('@carInsuranceLabel')
